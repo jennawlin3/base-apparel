@@ -30,21 +30,18 @@ body {
 		"main";
 }
 
-.logo-container {
+.header {
 	grid-area: header;
-}
-
-.logo {
 	margin: 40px 0 40px 40px;
 }
 
 .hero-container {
 	width: 100%;
+	height: 60vh;
 	grid-area: hero;
-}
-
-.hero img {
-	width: 100%;
+	background: url(../../images/hero-mobile.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .content h1 {
@@ -80,9 +77,9 @@ form {
 }
 
 input[type="email"] {
-	width: 85%;
+	width: 75%;
 	background: hsl(0, 100%, 98%);
-	border: 1px solid var(--desaturated-red);
+	border: 1px solid #413a3a29;
 	padding: 17px;
 	border-radius: 25px;
 	position: relative;
@@ -102,18 +99,20 @@ input[type="email"]:focus {
 	background-color: transparent;
 }
 
-form a {
-	background-color: var(--soft-red);
+#submit {
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 	align-self: center;
-	padding: 16px 32px;
+	padding: 16px 35px;
 	border-radius: 25px;
 	position: absolute;
-	margin-left: 72%;
-	opacity: .8;
+	margin-left: 70%;
+	outline: none;
+	border: 1px solid transparent;
 }
 
-form a:hover {
-	opacity: .4;
+#submit:hover {
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 92%, 90%));
+
 }
 
 .error-msg {
@@ -131,7 +130,12 @@ form a:hover {
 	display: block;
 }
 
-@media screen and (min-width: 800px) {
+.attribution {
+	margin-top: 20px;
+}
+
+@media screen and (min-width: 950px) {
+
 	.container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -139,38 +143,73 @@ form a:hover {
 		grid-template-areas: 
 		"header hero"
 		"main hero";
-		color: red;
+		background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 		width: 100vw;
+		min-height: 100vh;	
 	}
 
-	.logo-container {
-		grid-area: logo logo;
+	.header {
+		grid-area: header;
+	}
+
+	.header img {
+		margin-top: 30px;
+		margin-left: 15%;
 	}
 
 	.content {
 		grid-area: main;
+		padding: 10% 20%;
+	}
+
+	.content h1, .content p {
+		margin: 30px 0;
+		text-align: start;
 	}
 
 	.hero-container {
 		grid-area: hero;
-		height: 100%;
-	}
-
-	.hero img {
 		width: 100%;
-		min-height: 100vh;
+		height: auto;
+		background: url(../../images/hero-desktop.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 
+	form{
+	width: 400px;
+	align-items: initial;
+	}
+
+	input[type="email"] {
+		width: 300px;
+	}
+
+	#submit {
+		margin-left: 200px;
+		padding: 16px 45px;
+	}
+
+	.error-msg p {
+		margin: 0;
+	}
+
+	footer {
+		grid-area: footer footer;
+	}
+}
+
+@media screen and (min-width: 1400px) {
 	form {
-	width: 100%;
-}
+		width: 600px;
+		align-items: initial;
+	}
 
-form a {
-	margin-left: 0;
-}
+	input[type="email"] {
+		width: 450px;
+	}
 
-footer {
-	grid-area: footer footer;
-}
-
+	form a {
+		margin-left: 280px;
+	}
 }
