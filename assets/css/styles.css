@@ -77,7 +77,8 @@ form {
 }
 
 input[type="email"] {
-	width: 75%;
+	width: 80vw;
+	height: 55px;
 	background: hsl(0, 100%, 98%);
 	border: 1px solid #413a3a29;
 	padding: 17px;
@@ -102,21 +103,21 @@ input[type="email"]:focus {
 #submit {
 	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 	align-self: center;
-	padding: 16px 35px;
+	padding: 15px 35px;
 	border-radius: 25px;
 	position: absolute;
-	margin-left: 70%;
+	right: 30px;
 	outline: none;
 	border: 1px solid transparent;
 }
 
 #submit:hover {
 	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 92%, 90%));
-
+	cursor: pointer;
 }
 
 .error-msg {
-	width: 90%;
+	width: 90vw;
 	margin-top: 15px;
 	display: none;
 }
@@ -150,16 +151,26 @@ input[type="email"]:focus {
 
 	.header {
 		grid-area: header;
+		margin: 80px 0 40px 40px;
 	}
 
 	.header img {
 		margin-top: 30px;
-		margin-left: 15%;
+		margin-left: 20px;
 	}
 
 	.content {
 		grid-area: main;
-		padding: 10% 20%;
+		padding: 50px 70px;
+	}
+
+	.content::before {
+		content: "";
+		background: url(../../images/bg-pattern-desktop.svg);
+		position: absolute;
+		width: 100%;
+		height: auto;
+		z-index: 999;
 	}
 
 	.content h1, .content p {
@@ -177,17 +188,17 @@ input[type="email"]:focus {
 	}
 
 	form{
-	width: 400px;
+	width: 475px;
 	align-items: initial;
+	position: relative;
 	}
 
 	input[type="email"] {
-		width: 300px;
+		width: 430px;
 	}
 
 	#submit {
-		margin-left: 200px;
-		padding: 16px 45px;
+		right: 40px;
 	}
 
 	.error-msg p {
@@ -206,7 +217,7 @@ input[type="email"]:focus {
 	}
 
 	input[type="email"] {
-		width: 450px;
+		width: 475px;
 	}
 
 	form a {
