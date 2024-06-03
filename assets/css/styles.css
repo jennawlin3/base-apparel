@@ -12,7 +12,7 @@
 body {
 	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 	width: 100vw;
-	height: 100vh;
+	height: auto;
 	display: grid;
 	align-items: center;
 	justify-content: center;
@@ -32,7 +32,14 @@ body {
 
 .header {
 	grid-area: header;
-	margin: 40px 0 40px 40px;
+	width: 100%;
+	height: 90px;
+	display: flex;
+	align-items: center;
+}
+
+.header img {
+	margin-left: 40px;
 }
 
 .hero-container {
@@ -44,13 +51,26 @@ body {
 	background-size: cover;
 }
 
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .content h1 {
-	margin: 60px 50px 30px;
+	width: 80%;
+	line-height: 1.7;
+	padding: 30px 0 20px;
 	text-align: center;
-	font-size: 3.5rem;
+	font-size: 2rem;
 	text-transform: uppercase;
-	letter-spacing: 20px;
-	color: var(--dark-grayish-red)
+	letter-spacing: 10px;
+	color: var(--dark-grayish-red);
+}
+
+.container h1 span {
+	display: block;
 }
 
 .content h1 span, .content p, .error-msg p {
@@ -62,7 +82,8 @@ body {
 }
 
 .content p {
-	margin: 0 30px;
+	width: 80%;
+	margin: auto;
 	line-height: 1.7;
 }
 
@@ -70,29 +91,35 @@ form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 100vw;
+	width: 90%;
 	margin-top: 30px;
 	margin-bottom: 40px;
 	grid-area: main;
 }
 
+.input-container {
+	width: 90%;
+}
+
 input[type="email"] {
-	width: 80vw;
+	width: 100%;
 	height: 55px;
 	background: hsl(0, 100%, 98%);
 	border: 1px solid #413a3a29;
 	padding: 17px;
 	border-radius: 25px;
-	position: relative;
 	font-size: 1rem;
   font-family: "Josefin Sans", sans-serif;
 }
 
+.input-container {
+	position: relative;
+	margin: auto;
+}
 
 input[type="email"]::placeholder {
 	color: #ce9797b0;
 }
-
 
 input[type="email"]:focus {
 	border: 2px solid var(--soft-red);
@@ -105,10 +132,10 @@ input[type="email"]:focus {
 	align-self: center;
 	padding: 15px 35px;
 	border-radius: 25px;
-	position: absolute;
-	right: 30px;
 	outline: none;
 	border: 1px solid transparent;
+	position: absolute;
+	right: 0;
 }
 
 #submit:hover {
@@ -135,7 +162,7 @@ input[type="email"]:focus {
 	margin-top: 20px;
 }
 
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 900px) {
 
 	.container {
 		display: grid;
@@ -178,6 +205,14 @@ input[type="email"]:focus {
 		text-align: start;
 	}
 
+	.content h1 {
+		font-size: 3.5rem;
+		font-weight: 400;
+		line-height: 1.2;
+		letter-spacing: 15px;
+		margin: 0;
+	}
+
 	.hero-container {
 		grid-area: hero;
 		width: 100%;
@@ -187,18 +222,17 @@ input[type="email"]:focus {
 		background-size: cover;
 	}
 
-	form{
+	form {
 	width: 475px;
-	align-items: initial;
-	position: relative;
 	}
 
 	input[type="email"] {
-		width: 430px;
-	}
+		width: 430px;	
+	} 
 
 	#submit {
-		right: 40px;
+		top: 0;
+		right: -5px;
 	}
 
 	.error-msg p {
@@ -207,20 +241,5 @@ input[type="email"]:focus {
 
 	footer {
 		grid-area: footer footer;
-	}
-}
-
-@media screen and (min-width: 1400px) {
-	form {
-		width: 600px;
-		align-items: initial;
-	}
-
-	input[type="email"] {
-		width: 475px;
-	}
-
-	form a {
-		margin-left: 280px;
 	}
 }
